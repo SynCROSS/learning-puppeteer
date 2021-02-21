@@ -1,0 +1,22 @@
+{
+  "name": "learning-puppeteer",
+  "version": "0.0.1",
+  "description": "Learning Puppeteer",
+  "main": "index.js",
+  "repository": "https://github.com/SynCROSS/learning-puppeteer.git",
+  "author": "SynCROSS",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/node": "^7.12.17",
+    "puppeteer": "^7.1.0",
+    "puppeteer-core": "^7.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.17"
+  }
+}
