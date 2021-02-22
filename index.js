@@ -4,13 +4,18 @@ const crawlSomething = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   try {
-    await page.goto('https://news.ycombinator.com', {
-      waitUntil: 'networkidle2',
+    await page.goto('https://example.com');
+
+    // * Get the "viewport" of the page, as reported by the page.
+    const dimensions = await page.evaluate(() => {
+      return {
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight,
+        deviceScaleFactor: window.devicePixelRatio,
+      };
     });
-    await page.pdf({
-      path: 'example.pdf',
-      format: 'a4',
-    });
+    console.log('Dimensions:', dimensions);
+
     await browser.close();
   } catch (e) {
     console.error(e);
